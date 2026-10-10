@@ -1,0 +1,27 @@
+{
+    "name": "nuxt",
+    "private": true,
+    "license": "MIT",
+    "packageManager": "pnpm@10.7.0",
+    "workspaces": [
+        "packages/*"
+    ],
+    "devDependencies": {
+        "playwright-core": "1.64.0",
+        "taze": "^18.7.1",
+        "vite-plus": "1.1.0",
+        "vitest": "4.1.10"
+    },
+    "scripts": {
+        "nuxt-pre-fetch": "pnpm --filter @mono-lit/nuxt-pre-fetch",
+        "bootstrap": "vp install && vp run lib:all",
+        "build": "vp run lib:all",
+        "dev": "pnpm nuxt-pre-fetch dev",
+        "typecheck": "pnpm nuxt-pre-fetch typecheck",
+        "test": "vp run lib:all && pnpm nuxt-pre-fetch test",
+        "test:unit": "pnpm nuxt-pre-fetch test:unit",
+        "test:e2e": "vp run lib:all && pnpm nuxt-pre-fetch test:e2e",
+        "clean": "pnpm -r --filter \"./packages/*\" exec node -e \"for (const d of ['dist','.nuxt','playground/.nuxt','playground/.output']) require('fs').rmSync(d, { recursive: true, force: true })\" && vp cache clean",
+        "cache:clean": "vp cache clean"
+    }
+}

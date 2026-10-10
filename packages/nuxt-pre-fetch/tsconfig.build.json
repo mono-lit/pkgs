@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "isolatedDeclarations": true,
+    "declaration": true,
+    "paths": {}
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}

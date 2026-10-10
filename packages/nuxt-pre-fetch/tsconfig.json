@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "node"
+    ],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "paths": {
+      "#imports": [
+        "./test/unit/stubs/imports.ts"
+      ],
+      "#nuxt-pre-fetch/manifest": [
+        "./test/unit/stubs/manifest.ts"
+      ],
+      "nitropack/runtime": [
+        "./test/unit/stubs/imports.ts"
+      ],
+      "#nuxt-pre-fetch/definitions": [
+        "./test/unit/stubs/definitions.ts"
+      ]
+    }
+  },
+  "include": [
+    "src/module.ts",
+    "src/build/**/*.ts",
+    "src/runtime/shared/**/*.ts",
+    "src/runtime/server/utils/**/*.ts",
+    "src/runtime/utils/**/*.ts",
+    "test/**/*.ts",
+    "tsdown.config.ts",
+    "vitest.config.ts"
+  ]
+}

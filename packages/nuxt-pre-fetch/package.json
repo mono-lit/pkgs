@@ -1,0 +1,79 @@
+{
+  "name": "@mono-lit/nuxt-pre-fetch",
+  "version": "0.0.1",
+  "description": "Nitro-side API prefetching for Nuxt apps with ssr: false — usePreFetch() reuses data embedded in the SPA shell, no duplicate initial request.",
+  "keywords": [
+    "nuxt",
+    "nuxt-module",
+    "nitro",
+    "prefetch",
+    "useFetch",
+    "useAsyncData",
+    "spa",
+    "csr"
+  ],
+  "author": "Nemure231",
+  "license": "MIT",
+  "homepage": "https://github.com/mono-lit/pkgs/tree/main/packages/nuxt-pre-fetch#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mono-lit/pkgs.git",
+    "directory": "packages/nuxt-pre-fetch"
+  },
+  "bugs": {
+    "url": "https://github.com/mono-lit/pkgs/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/module.d.mts",
+      "import": "./dist/module.mjs"
+    }
+  },
+  "main": "./dist/module.mjs",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "tsdown && nuxi prepare playground",
+    "typecheck": "tsc --noEmit -p tsconfig.json && nuxi typecheck playground",
+    "test": "vitest run",
+    "test:unit": "vitest run --project unit",
+    "test:e2e": "vitest run --project e2e",
+    "prepack": "pnpm build"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^4.5.2",
+    "defu": "^6.1.4",
+    "h3": "^1.15.0",
+    "oxc-parser": "^0.151.0"
+  },
+  "peerDependencies": {
+    "nuxt": ">=3.17.0",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@nuxt/cli": "^3.37.0",
+    "@nuxt/schema": "4.5.2",
+    "@nuxt/test-utils": "4.3.2",
+    "@pinia/nuxt": "1.0.2",
+    "@types/node": "^24.0.0",
+    "nitropack": "2.13.4",
+    "nuxt": "4.5.2",
+    "pinia": "4.0.3",
+    "playwright-core": "1.64.0",
+    "tsdown": "0.23.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10",
+    "vue": "^3.5.40",
+    "vue-tsc": "3.3.11"
+  },
+  "types": "./dist/module.d.mts"
+}
